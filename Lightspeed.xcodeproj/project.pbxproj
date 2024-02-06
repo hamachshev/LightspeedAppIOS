@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		922408442B724C6A009C3C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922408432B724C6A009C3C59 /* AppDelegate.swift */; };
 		922408462B724C6A009C3C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922408452B724C6A009C3C59 /* SceneDelegate.swift */; };
-		922408482B724C6A009C3C59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922408472B724C6A009C3C59 /* ViewController.swift */; };
+		922408482B724C6A009C3C59 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922408472B724C6A009C3C59 /* MainVC.swift */; };
 		9224084D2B724C6B009C3C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9224084C2B724C6B009C3C59 /* Assets.xcassets */; };
 		922408502B724C6B009C3C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9224084E2B724C6B009C3C59 /* LaunchScreen.storyboard */; };
+		9224085C2B72927C009C3C59 /* LSHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224085B2B72927C009C3C59 /* LSHeader.swift */; };
+		9224085E2B729B20009C3C59 /* LSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224085D2B729B20009C3C59 /* LSTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		922408402B724C6A009C3C59 /* Lightspeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lightspeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922408432B724C6A009C3C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		922408452B724C6A009C3C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		922408472B724C6A009C3C59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		922408472B724C6A009C3C59 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		9224084C2B724C6B009C3C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9224084F2B724C6B009C3C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		922408512B724C6B009C3C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9224085B2B72927C009C3C59 /* LSHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSHeader.swift; sourceTree = "<group>"; };
+		9224085D2B729B20009C3C59 /* LSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				922408432B724C6A009C3C59 /* AppDelegate.swift */,
 				922408452B724C6A009C3C59 /* SceneDelegate.swift */,
-				922408472B724C6A009C3C59 /* ViewController.swift */,
+				922408472B724C6A009C3C59 /* MainVC.swift */,
 				9224084C2B724C6B009C3C59 /* Assets.xcassets */,
 				9224084E2B724C6B009C3C59 /* LaunchScreen.storyboard */,
 				922408512B724C6B009C3C59 /* Info.plist */,
+				9224085B2B72927C009C3C59 /* LSHeader.swift */,
+				9224085D2B729B20009C3C59 /* LSTableViewCell.swift */,
 			);
 			path = Lightspeed;
 			sourceTree = "<group>";
@@ -134,9 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922408482B724C6A009C3C59 /* ViewController.swift in Sources */,
+				9224085C2B72927C009C3C59 /* LSHeader.swift in Sources */,
+				922408482B724C6A009C3C59 /* MainVC.swift in Sources */,
 				922408442B724C6A009C3C59 /* AppDelegate.swift in Sources */,
 				922408462B724C6A009C3C59 /* SceneDelegate.swift in Sources */,
+				9224085E2B729B20009C3C59 /* LSTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
