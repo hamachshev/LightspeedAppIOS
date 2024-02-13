@@ -15,7 +15,7 @@ class LSMainScrollView: UIScrollView {
         translatesAutoresizingMaskIntoConstraints = false
         showsVerticalScrollIndicator = false
         contentSize = CGSize(width: bounds.width, height: 1000)
-        carousel1 = LSCarousel(title: "Trending Items", collectionView: UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()))
+        carousel1 = LSCarousel(title: "Trending Items", collectionView: LSBaseCarouselItemsCollectionView(items: ["hello", "hi", "bye", "another"]))
         configureSubviews()
         
        
@@ -31,7 +31,7 @@ class LSMainScrollView: UIScrollView {
         NSLayoutConstraint.activate([
             carousel1.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor),
             carousel1.leadingAnchor.constraint(equalTo: frameLayoutGuide.leadingAnchor),
-            carousel1.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor),
+            carousel1.trailingAnchor.constraint(equalTo: frameLayoutGuide.trailingAnchor, constant: -25),
             carousel1.heightAnchor.constraint(equalToConstant: 200)
         ])
     }

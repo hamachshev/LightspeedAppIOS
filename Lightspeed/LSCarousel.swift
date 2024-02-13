@@ -8,12 +8,15 @@
 import UIKit
 
 class LSCarousel: UIView {
+    
     var title: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont(name: "Sugar Magic - Personal Use Only", size: 22)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
     var itemCollectionView: UICollectionView?
 
 
@@ -28,10 +31,9 @@ class LSCarousel: UIView {
     
     convenience init(title: String, collectionView: UICollectionView){
         self.init()
-        self.title.text = title
         self.itemCollectionView = collectionView
-        self.itemCollectionView?.collectionViewLayout = UICollectionViewFlowLayout()
-
+        self.title.text = title
+        configureCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -39,14 +41,32 @@ class LSCarousel: UIView {
     }
     
     private func configure(){
-        title.translatesAutoresizingMaskIntoConstraints = false
         addSubview(title)
         let padding: CGFloat = 20
         
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: topAnchor, constant: padding),
-            title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding)
+            title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding + 5),
+            
+            
         ])
+        
+        
+        
+        
+       
+    }
+    
+    private func configureCollectionView(){
+        if let itemCollectionView = itemCollectionView {
+            addSubview(itemCollectionView)
+            NSLayoutConstraint.activate([
+                itemCollectionView.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
+                itemCollectionView.leadingAnchor.constraint(equalTo: title.leadingAnchor),
+                itemCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 15),
+                itemCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            ])
+        }
     }
     
 
