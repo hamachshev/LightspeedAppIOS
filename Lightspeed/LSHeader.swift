@@ -46,20 +46,20 @@ class LSHeader: UIView {
     }
     
     func configureConstraints(){
-        let padding: CGFloat = 30
+        
         NSLayoutConstraint.activate([
-            headerImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            headerImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            headerImageView.topAnchor.constraint(equalTo: topAnchor),
+            headerImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             headerImageView.heightAnchor.constraint(equalToConstant: 35),
             headerImageView.widthAnchor.constraint(equalToConstant: 164),
             
-            userButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
-            userButton.centerYAnchor.constraint(equalTo: headerImageView.centerYAnchor),
+            userButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            userButton.centerYAnchor.constraint(equalTo: headerImageView.centerYAnchor, constant: -2),
             userButton.heightAnchor.constraint(equalToConstant: 15),
             userButton.widthAnchor.constraint(equalToConstant: 40),
             
             searchButton.trailingAnchor.constraint(equalTo: userButton.leadingAnchor, constant: -10),
-            searchButton.centerYAnchor.constraint(equalTo: headerImageView.centerYAnchor),
+            searchButton.centerYAnchor.constraint(equalTo: userButton.centerYAnchor),
             searchButton.heightAnchor.constraint(equalToConstant: 25),
             searchButton.widthAnchor.constraint(equalToConstant: 25)
             

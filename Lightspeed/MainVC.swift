@@ -7,24 +7,49 @@
 
 import UIKit
 
-class MainVC: UITableViewController {
-    let rows = ["Misson", "Trending", "Recent Orders", "Order Status"]
+class MainVC: UIViewController {
+    var scrollView: LSMainScrollView!
+    var header: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(named: "MainBackground")
-        tableView.tableHeaderView = LSHeader()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        scrollView = LSMainScrollView()
+        header = LSHeader()
+        
+        configure()
+        
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        //
-//    }
-    
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        rows.count
-//    }
+    private func configure(){
+
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        header.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(header)
+        view.addSubview(scrollView)
+        
+        let padding: CGFloat = 20
+
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding + 10),
+            header.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            header.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            header.heightAnchor.constraint(equalToConstant: 35),
+
+            
+            scrollView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: padding + 10),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            
+            
+        ])
+     
+        
+    }
+
 
 
 }
