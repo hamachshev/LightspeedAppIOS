@@ -16,8 +16,17 @@ class MainVC: UIViewController {
         view.backgroundColor = UIColor(named: "MainBackground")
         scrollView = LSMainScrollView()
         header = LSHeader()
-        
         configure()
+        let gradientLayer = CAGradientLayer()
+                gradientLayer.colors = [
+                    UIColor.clear.cgColor,
+                    UIColor.systemBackground.cgColor
+                ]
+        gradientLayer.frame = CGRect(x: 0, y: view.bounds.height * 0.4, width: view.bounds.width, height: view.bounds.height * 0.6)
+
+        view.layer.addSublayer(gradientLayer)
+
+        
         
     }
     

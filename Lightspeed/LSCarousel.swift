@@ -20,7 +20,7 @@ class LSCarousel: UIView {
     var itemCollectionView: UICollectionView?
 
 
-    override init(frame: CGRect) {
+    private override init(frame: CGRect) {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(named: "MainCellColor")
@@ -29,10 +29,14 @@ class LSCarousel: UIView {
   
     }
     
-    convenience init(title: String, collectionView: UICollectionView){
+    convenience init(title: String, collectionView: UICollectionView, height: Int = 200){
         self.init()
         self.itemCollectionView = collectionView
         self.title.text = title
+        if height < 200 {
+            self.title.font = UIFont(name: "Sugar Magic - Personal Use Only", size: 16)
+        }
+        
         configureCollectionView()
     }
     

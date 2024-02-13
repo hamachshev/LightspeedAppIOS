@@ -10,7 +10,7 @@ import UIKit
 class LSBaseCarouselItemsCollectionView: UICollectionView {
     var items: [String] = []
 
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    private override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         dataSource = self
         register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -28,9 +28,11 @@ class LSBaseCarouselItemsCollectionView: UICollectionView {
     convenience init(items: [String]){
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 100, height: 125)
-        
         self.init(frame: .zero, collectionViewLayout: layout)
+        layout.itemSize = CGSize(width: 100, height: 125)
+    
+        
+        
         self.items = items
 
     }
