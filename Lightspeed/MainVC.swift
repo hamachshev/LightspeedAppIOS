@@ -10,12 +10,15 @@ import UIKit
 class MainVC: UIViewController {
     var scrollView: LSMainScrollView!
     var header: UIView!
+    var floatingBar: UIView!
+    let padding: CGFloat = 20
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "MainBackground")
         scrollView = LSMainScrollView()
         header = LSHeader()
+        floatingBar = UIView()
         configure()
         let gradientLayer = CAGradientLayer()
                 gradientLayer.colors = [
@@ -25,6 +28,7 @@ class MainVC: UIViewController {
         gradientLayer.frame = CGRect(x: 0, y: view.bounds.height * 0.4, width: view.bounds.width, height: view.bounds.height * 0.6)
 
         view.layer.addSublayer(gradientLayer)
+        addFloatingBar()
 
         
         
@@ -38,7 +42,7 @@ class MainVC: UIViewController {
         view.addSubview(header)
         view.addSubview(scrollView)
         
-        let padding: CGFloat = 20
+  
 
         NSLayoutConstraint.activate([
             header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding + 10),
@@ -57,6 +61,26 @@ class MainVC: UIViewController {
         ])
      
         
+    }
+    
+    private func addFloatingBar(){
+        floatingBar.translatesAutoresizingMaskIntoConstraints = false
+        floatingBar.backgroundColor = UIColor(named: "MainCellColor")
+        floatingBar.layer.cornerRadius = 16
+
+        view.addSubview(floatingBar)
+        
+        NSLayoutConstraint.activate([
+            floatingBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
+            floatingBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding ),
+            floatingBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding - 10),
+            floatingBar.heightAnchor.constraint(equalToConstant: 65)
+        ])
+
+        UIView.animate(withDuration: 2.5, delay: 0, options: [.autoreverse, .repeat, .curveEaseInOut]) { [weak self] in
+            guard let self = self else { return }
+            self.floatingBar.transform = CGAffineTransform(translationX: 0, y: -10)
+        }
     }
 
 

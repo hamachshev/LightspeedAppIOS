@@ -20,6 +20,7 @@ class LSMainScrollView: UIScrollView {
         translatesAutoresizingMaskIntoConstraints = false
         showsVerticalScrollIndicator = false
         contentSize = CGSize(width: bounds.width, height: 1000)
+        layer.cornerRadius = 16
         delegate = self
 //
 //        let gradient = CAGradientLayer()
@@ -28,7 +29,6 @@ class LSMainScrollView: UIScrollView {
 //        layer.addSublayer(gradient)
         makeSubviews()
         configureSubviews()
-        
        
     }
     
